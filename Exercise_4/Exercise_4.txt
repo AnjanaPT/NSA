@@ -1,0 +1,69 @@
+1) Use the cat command to create a file containing the following data. Call it myfile
+use tabs to separate the fields.
+1001 RAM 97
+1025 ARUN 86
+1013 RAJU 93
+
+anjanapt@anjanapt-VirtualBox:~$ cat >myfile
+1001 RAM 97
+1025 ARJUN 86
+1013 RAJU 93
+
+anjanapt@anjanapt-VirtualBox:~$ cat myfile
+1001 RAM 97
+1025 ARJUN 86
+1013 RAJU 93
+
+anjanapt@anjanapt-VirtualBox:~$ cat myfile | column -t -s ' '
+1001  RAM    97
+1025  ARJUN  86
+1013  RAJU   93
+anjanapt@anjanapt-VirtualBox:~$
+
+
+
+2) Use the cut and paste commands to swap fields 2 and 3 of myfile.
+
+anjanapt@anjanapt-VirtualBox:~$ cut -d ' ' -f 1,3 myfile > cat && cut -d ' ' -f 2 myfile | paste cat -
+1001 97	RAM
+1025 86	ARJUN
+1013 93	RAJU
+anjanapt@anjanapt-VirtualBox:~$
+
+
+
+3) Print first 2 rows of the file myfile
+
+anjanapt@anjanapt-VirtualBox:~$ head -2 myfile | column -t -s ' '
+1001  RAM    97
+1025  ARJUN  86
+anjanapt@anjanapt-VirtualBox:~$
+
+
+
+
+4) Print the contents of 3rd row only of the file myfile
+
+anjanapt@anjanapt-VirtualBox:~$ head -3 myfile | tail -1
+1013 RAJU 93
+anjanapt@anjanapt-VirtualBox:~$
+
+
+
+
+5) Print the names only from the file myfile
+
+anjanapt@anjanapt-VirtualBox:~$ cut -d ' ' -f 2 myfile
+RAM
+ARJUN
+RAJU
+anjanapt@anjanapt-VirtualBox:~$ 
+
+
+
+
+6) Count the number of Lines, words and characters from the previous output
+
+anjanapt@anjanapt-VirtualBox:~$ cut -d ' ' -f 2 myfile | wc
+      3       3      15
+anjanapt@anjanapt-VirtualBox:~$
