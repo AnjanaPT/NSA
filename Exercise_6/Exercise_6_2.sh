@@ -5,10 +5,13 @@
 
 
 echo -n "\n\nOperating System         : $(uname)"
+
 echo -n "\n\nRelease No Of The Kernel : $(uname -r)"
 #echo -n "\nRelease No Of The Kernel : $(uname --kernel-release)"
+
 echo -n "\n\nVersion Of The Kernel    : $(uname -v)"
 #echo -n "\nVersion Of The Kernel    : $(uname --kernel-version)"
+
 echo -n "\n\nAvailable Shells         :$(cat /etc/shells)"
+
 echo -n "\n\nMounted File Systems     : $(mount |column -t)\n"
- 
